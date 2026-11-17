@@ -1,0 +1,190 @@
+% a mashup of hipstercv, friggeri and twenty cv
+% https://www.latextemplates.com/template/twenty-seconds-resumecv
+% https://www.latextemplates.com/template/friggeri-resume-cv
+
+\documentclass[darkhipster]{simplehipstercv}
+% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[margin=1cm, a4paper]{geometry}
+
+
+%------------------------------------------------------------------ Variablen
+
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
+
+%------------------------------------------------------------------
+\title{Batman CV}
+\author{Bruce Wayne}
+\date{November 2026}
+
+\pagestyle{empty}
+\begin{document}
+
+
+\thispagestyle{empty}
+%---------------------------------------------
+
+\section*{Start}
+
+\simpleheader{headercolour}{Bruce}{Wayne}{The Batman}{white}
+
+
+
+%------------------------------------------------
+
+% this has to be here so the paracols starts..
+\subsection*{}
+\vspace{4em}
+
+\setlength{\columnsep}{1.5cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+
+\paracolbackgroundoptions
+
+\footnotesize
+{\setasidefontcolour
+\flushright
+\begin{center}
+    \roundpic{batman.png}
+\end{center}
+
+\bg{cvgreen}{white}{O mnie}\\[0.5em]
+
+{\footnotesize Filantrop, miliarder, playboy... a po zmroku mściciel walczący z bezprawiem w Gotham City. Używam strachu, technologii i dedukcji, by chronić niewinnych.}
+\bigskip
+
+\bg{cvgreen}{white}{Dane osobowe} \\[0.5em]
+Bruce Wayne
+
+obywatelstwo: Amerykańskie 
+
+Gotham City
+
+\bigskip
+
+\bg{cvgreen}{white}{Specjalizacja} \\[0.5em]
+
+Kryminalistika ~•~ Sztuki walki ~•~ Taktyka ~•~ Zastraszanie
+
+\bigskip
+
+\bg{cvgreen}{white}{Zainteresowania}\\[0.5em]
+
+Lotnictwo, zaawansowane inżynieria, kolekcjonowanie gadżetów szpiegowskich, rzemiosło detektywistyczne.
+\bigskip
+
+\bg{cvgreen}{white}{Technologie}\ \\[0.5em]
+
+\texttt{Batkomputer} ~/~ \texttt{Baty} ~/~ \texttt{Drony}
+
+\texttt{Kryptonit} ~/~ \texttt{Karbon} ~/~ \texttt{Stal}
+
+\vspace{4em}
+
+\infobubble{\faAt}{cvgreen}{white}{batman@wayneenterprises.com}
+\infobubble{\faTwitter}{cvgreen}{white}{@batman}
+\infobubble{\faFacebook}{cvgreen}{white}{The Dark Knight}
+\infobubble{\faGithub}{cvgreen}{white}{wayne-tech}
+
+\phantom{turn the page}
+
+\phantom{turn the page}
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\small
+\section*{Kariera (Skrót)}
+
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2008--Obecnie}{Obrońca Gotham City}{Vigilante / Detektyw}{Gotham \color{cvred}}{Oczyszczanie ulic z korupcji, walka z Jokerem, Riddlerem i Bane'em.}{medal.jpeg} \\
+    \cvevent{2003--2008}{Członek Ligi Sprawiedliwości}{Założyciel / Strateg}{Metropolis / Ziemia \color{cvred}}{Koordynacja działań obronnych planety przed zagrożeniami pozaziemskimi.}{disney.png}
+\end{tabular}
+\vspace{3em}
+
+\begin{minipage}[t]{0.35\textwidth}
+\section*{Edukacja}
+\begin{tabular}{r p{0.6\textwidth} c}
+    \cvdegree{2002}{Liga Zabójców}{Certyfikat Ninja}{Azja \color{headerblue}}{Trening u boku Ra's al Ghula}{medal.jpeg} \\
+    \cvdegree{2000}{Prawo i Kryminologia}{M.A.}{Yale University \color{headerblue}}{}{medal.jpeg} \\
+    \cvdegree{1998}{Fizyka i Inżynieria}{B.Sc.}{Princeton \color{headerblue}}{}{medal.jpeg}
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Umiejętności}
+\begin{tabular}{r @{\hspace{0.5em}}l}
+     \bg{skilllabelcolour}{iconcolour}{Sztuki walki} &  \barrule{0.95}{0.5em}{cvpurple}\\
+     \bg{skilllabelcolour}{iconcolour}{Detektywistyka} & \barrule{0.9}{0.5em}{cvgreen} \\
+     \bg{skilllabelcolour}{iconcolour}{Hacking} & \barrule{0.6}{0.5em}{cvpurple} \\
+     \bg{skilllabelcolour}{iconcolour}{Inżynieria} & \barrule{0.75}{0.5em}{cvpurple} \\
+     \bg{skilllabelcolour}{iconcolour}{Skradanie} & \barrule{0.85}{0.5em}{cvpurple} \\
+\end{tabular}
+\end{minipage}
+
+\section*{Doświadczenie zawodowe}
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2005--Obecnie}{CEO Wayne Enterprises}{Prezes Zarządu}{Gotham \color{cvred}}{Zarządzanie globalnym konglomeratem technologiczno-zbrojeniowym, finansowanie badań nad czystą energią.}{disney.png} \\
+    \cvevent{2001--2003}{Podróże i Treningi}{Niezależny Badacze}{Świat \color{cvred}}{Praktyczna nauka u największych mistrzów miecza, przetrwania i medycyny sądowej.}{medal.jpeg} \\
+\end{tabular}
+\vspace{3em}
+
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Certyfikaty i Odznaczenia}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.55\textwidth}}
+    2015 & Order Zasługi Miasta Gotham \\
+    2010 & Dyplom Mistrza Śledztwa Sądowego \\
+    2004 & Licencja Pilota Wszystkich Typów Pojazdów
+\end{tabular}
+\bigskip
+
+\section*{Języki}
+\begin{tabular}{l | ll}
+\textbf{Angielski} & C2 & {\phantom{x}\footnotesize ojczysty} \\
+\textbf{Hiszpański} & C1 & \pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\tiny} \\
+\textbf{Mandaryński} & C1 & \pictofraction{\faCircle}{cvgreen}{4}{black!30}{1}{\tiny} \\
+\textbf{Rosyjski} & B2 & \pictofraction{\faCircle}{cvgreen}{3}{black!30}{2}{\tiny}
+\end{tabular}
+\bigskip
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\section*{Publikacje}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.7\textwidth}}
+    2018 & \emph{Psychologia kryminalistyki: Jak myśli psychopata}, Wayne Press. \\
+    2012 & ``Technologie obronne w architekturze megamiast'', \emph{Gotham Review}.
+\end{tabular}
+\bigskip
+
+\section*{Wystąpienia}
+\begin{tabular}{>{\footnotesize\bfseries}r >{\footnotesize}p{0.6\textwidth}}
+    Paź. 2022 & ``Finansowanie filantropii a bezpieczeństwo miejskie'', \emph{Global Wayne Foundation Summit}.
+\end{tabular}
+\end{minipage}
+
+
+
+
+
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\small Bruce Wayne \icon{\faEnvelopeO}{cvgreen}{} Batcave \icon{\faMapMarker}{cvgreen}{} Gotham City \icon{\faPhone}{cvgreen}{} 555-BAT-MAN \newline\icon{\faAt}{cvgreen}{} \protect\url{bruce@wayneenterprises.com}
+}
+\end{center}
+\end{minipage}
+
+\end{paracol}
+
+\end{document}
