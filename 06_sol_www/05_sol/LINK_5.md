@@ -2,8 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/edukacja/
+https://michalpedzisz.github.io/edukacja
     
 ## Repozytorium
 
-https://github.com/NAZWA-UZYTKOWNIKA/edukacja
+https://github.com/MichalPedzisz/edukacja
