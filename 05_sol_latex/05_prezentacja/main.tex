@@ -1,0 +1,186 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+\title[Fizyka Współczesna i Klasyczna]{Wybrane Zagadnienia z Fizyki}
+\subtitle{Podstawowe prawa, mechanika kwantowa i teoria względności}
+\author{Projekt Edukacyjny}
+\date{\today}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+
+% Slajd 1: Tytułowy
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slajd 2: Spis treści
+\begin{frame}{Spis Treści}
+    \tableofcontents
+\end{frame}
+
+\section{Wprowadzenie}
+
+% Slajd 3: Listy punktowane i numerowane
+\begin{frame}{Czym zajmuje się fizyka?}
+    Fizyka to nauka przyrodnicza badająca fundamentalne i uniwersalne prawa przyrody.
+    
+    \vspace{0.3cm}
+    Główne działy klasyczne:
+    \begin{itemize}
+        \item Mechanika klasyczna i grawitacja
+        \item Termodynamika i fizyka statystyczna
+        \item Elektrodynamika i optyka
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    Etopy rozwoju poznania naukowego:
+    \begin{enumerate}
+        \item Obserwacja zjawiska i zbieranie danych
+        \item Sformułowanie hipotezy badawczej
+        \item Przeprowadzenie eksperymentu weryfikacyjnego
+        \item Utworzenie teorii matematycznej
+    \end{enumerate}
+\end{frame}
+
+\section{Mechanika Klasyczna}
+
+% Slajd 4: Wzory matematyczne
+\begin{frame}{Mechanika Klasyczna i Dynamika}
+    Podstawą mechaniki klasycznej są zasady dynamiki Newtona oraz zasady zachowania.
+    
+    \begin{block}{Druga zasada dynamiki Newtona}
+        Jeżeli na ciało działa niezrównoważona siła, to porusza się ono z przyspieszeniem wprost proporcjonalnym do działającej siły i odwrotnie proporcjonalnym do masy ciała:
+        \begin{equation}
+            \vec{F} = m \cdot \vec{a}
+        \end{equation}
+    \end{block}
+    
+    \begin{exampleblock}{Zasada zachowania pędu}
+        W układzie izolowanym całkowity pęd układu ciał pozostaje stały w czasie:
+        \begin{equation}
+            \sum \vec{p}_i = \text{const}
+        \end{equation}
+    \end{exampleblock}
+\end{frame}
+
+\section{Termodynamika}
+
+% Slajd 5: Bloki informacyjne
+\begin{frame}{Termodynamika i Ciepło}
+    Termodynamika opisuje procesy związane z ciepłem, temperaturą oraz pracą.
+    
+    \begin{block}{Pierwsza zasada termodynamiki}
+        Zmiana energii wewnętrznej układu $(\Delta U)$ jest równa sumie dostarczonego ciepła $(Q)$ oraz wykonanej pracy $(W)$ nad układem:
+        \begin{equation}
+            \Delta U = Q + W
+        \end{equation}
+    \end{block}
+
+    \begin{alertblock}{Ostrzeżenie / Druga zasada}
+        Ciepło nie może samorzutnie przepływać z ciała o niższej temperaturze do ciała o wyższej temperaturze bez wkładu pracy zewnętrznej.
+    \end{alertblock}
+\end{frame}
+
+\section{Elektrodynamika}
+
+% Slajd 6: Układ dwóch kolumn
+\begin{frame}{Elektrodynamika i Pola}
+    Elektrodynamika bada wzajemne oddziaływania ładunków elektrycznych oraz pól elektromagnetycznych.
+    
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+        \textbf{Pole Elektrostatyczne}
+        \begin{itemize}
+            \item Prawo Coulomba opisuje siłę między ładunkami.
+            \item Potencjał elektryczny i natężenie pola.
+            \item Kondensatory jako magazyny energii.
+        \end{itemize}
+        \begin{equation}
+            F = k \cdot \frac{q_1 q_2}{r^2}
+        \end{equation}
+        
+        \column{0.48\textwidth}
+        \textbf{Pole Magnetyczne}
+        \begin{itemize}
+            \item Prąd elektryczny wytwarza pole magnetyczne.
+            \item Siła Lorentza działająca na ładunek.
+            \item Indukcja elektromagnetyczna Faradays.
+        \end{itemize}
+        \begin{equation}
+            \vec{F}_L = q(\vec{E} + \vec{v} \times \vec{B})
+        \end{equation}
+    \end{columns}
+\end{frame}
+
+\section{Fizyka Kwantowa}
+
+% Slajd 7: Fizyka kwantowa
+\begin{frame}{Wprowadzenie do Fizyki Kwantowej}
+    Na przełomie XIX i XX wieku klasyczna fizyka przestała tłumaczyć zjawiska w skali atomowej.
+    
+    \begin{block}{Hipoteza Plancka i dualizm korpuskularno-falowy}
+        Energia promieniowania elektromagnetycznego jest emitowana w postaci porcji (kwantów) zwanych fotonami:
+        \begin{equation}
+            E = h \cdot \nu
+        \end{equation}
+        gdzie $h$ to stała Plancka, a $\nu$ to częstotliwość fali.
+    \end{block}
+\end{frame}
+
+% Slajd 8: Równanie Schrödingera
+\begin{frame}{Równanie Falowe Schrödingera}
+    Fundamentalne równanie mechaniki kwantowej opisujące ewolucję stanu kwantowego w czasie:
+    
+    \begin{block}{Równanie Schrödingera (zależne od czasu)}
+        \begin{equation}
+            i \hbar \frac{\partial}{\partial t} \psi(\mathbf{r}, t) = \hat{H} \psi(\mathbf{r}, t)
+        \end{equation}
+    \end{block}
+    
+    \begin{itemize}
+        \item $\psi$ – funkcja falowa cząstki
+        \item $\hbar$ – zredukowana stała Plancka ($\hbar = \frac{h}{2\pi}$)
+        \item $\hat{H}$ – operator Hamiltona (energia całkowita)
+    \end{itemize}
+\end{frame}
+
+\section{Teoria Względności}
+
+% Slajd 9: Szczególna teoria względności
+\begin{frame}{Szczególna Teoria Względności}
+    Stworzona przez Alberta Einsteina w 1905 roku, opiera się na dwóch postulatach:
+    
+    \begin{enumerate}
+        \item Zasada względności – prawa fizyki są takie same we wszystkich układach inercjalnych.
+        \item Stałość prędkości światła w próżni ($c$) dla każdego obserwatora.
+    \end{enumerate}
+    
+    \begin{exampleblock}{Najsłynniejszy wzór fizyczny}
+        Równoważność masy i energii:
+        \begin{equation}
+            E = m c^2
+        \end{equation}
+    \end{exampleblock}
+\end{frame}
+
+% Slajd 10: Podsumowanie
+\begin{frame}{Podsumowanie}
+    Fizyka stanowi fundament rozwoju nowoczesnej technologii i naszego zrozumienia wszechświata.
+    
+    \vspace{0.4cm}
+    \begin{center}
+        \textbf{Dziękuję za uwagę!} \\
+        \vspace{0.2cm}
+        Pytania i dyskusja.
+    \end{center}
+\end{frame}
+
+\end{document}
