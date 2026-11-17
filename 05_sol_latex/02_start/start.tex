@@ -1,0 +1,531 @@
+\documentclass[11pt, a4paper]{article}
+
+% Kodowanie znaków i język polski dla standardowego kompilatora pdfLaTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+
+% Czcionka bezszeryfowa
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Układ strony i pakiety dodatkowe
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\title{start}
+\author{Michal Pedzisz}
+\date{November 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{wykres.png}
+    \caption{Podpis pod obrazkiem.}
+    \label{rys:moj_wykres}
+\end{figure}
+
+\section*{Markdown, Colab oraz GitHub}
+
+Na początek poznamy trzy narzędzia, które rozwiązują trzy różne problemy:
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{l X}
+\toprule
+\textbf{Narzędzie} & \textbf{Do czego służy?} \\
+\midrule
+\textbf{Markdown} & do prostego zapisywania uporządkowanego tekstu, dokumentacji i raportów \\
+\textbf{Google Colab} & do łączenia tekstu, kodu, obliczeń i wyników w jednym notebooku \\
+\textbf{GitHub} & do przechowywania projektu, śledzenia zmian i współpracy \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Te trzy elementy bardzo dobrze ze sobą współpracują. Podstawą wszędzie jest przygotowanie opisu w kodzie Markdown. Do tego dochodzić będą obliczenia w Colabie, a następnie przechowanie źródła i wyniki w repozytorium GitHub.
+
+\medskip\hrule\medskip
+
+\section{Markdown}
+
+\subsection{Co to jest Markdown?}
+
+\textbf{Markdown} to prosty język znaczników służący do formatowania zwykłego tekstu.
+
+Najczęściej zapisujemy go w plikach z rozszerzeniem:
+
+\begin{verbatim}
+.md
+\end{verbatim}
+
+Przykłady:
+
+\begin{verbatim}
+README.md
+raport.md
+notatki.md
+\end{verbatim}
+
+Plik Markdown jest zwykłym plikiem tekstowym. Można go otworzyć praktycznie w każdym edytorze. Specjalne znaki, takie jak \texttt{\#}, \texttt{*}, \texttt{-} czy \texttt{\$}, informują program wyświetlający dokument, jak ma wyglądać tekst.
+
+\section{Dlaczego Markdown jest tak istotny?}
+
+Za każdym razem rozmawiając z chatem AI tak naprawdę rozmawiamy z plikiem Markdown. AI potrafi interpretować składnię Markdown i generować raporty w tym formacie.
+
+Dlatego też jak skopiujesz output to ma on całą masę znaczników (np. \texttt{\#}, \texttt{*}, \texttt{-}, czy \texttt{\$}), które są potrzebne do poprawnego renderowania.
+
+Github (archiwum programistyczne) zawiera opisy również w Markdown. Podobnie Google Colab (środowisko programistyczne pythona) potrafią renderować Markdown. Dzięki temu możemy przygotować raport, który będzie wyglądał dobrze zarówno w przeglądarce, jak i w notebooku.
+
+Warto od razu rozróżnić dwie rzeczy:
+
+\begin{itemize}
+    \item \textbf{źródło Markdown} --- tekst, który wpisujemy do pliku,
+    \item \textbf{wyrenderowany dokument} --- wygląd tego tekstu po interpretacji składni Markdown.
+\end{itemize}
+
+Na GitHubie możemy przełączać się między widokiem źródła i wyrenderowanym dokumentem.
+
+Podobnie edytory kodu jak VS Code, PyCharm czy Jupyter Notebook potrafią renderować Markdown w osobnym oknie podglądu.
+
+\subsection{Zanim zaczniemy pisać w Markdown zobacz przykładowy plik Markdown}
+
+Raport na temat ciała na sprężynie:
+
+\begin{itemize}
+    \item \href{examples/01_markdown/raport_cialo_na_sprezynie.md}{,,Ciało na sprężynie''}.
+\end{itemize}
+
+\subsection{Nagłówki}
+
+Nagłówki budują strukturę dokumentu. Im więcej znaków \texttt{\#}, tym niższy poziom nagłówka.
+
+Źródło:
+
+\begin{verbatim}
+# Tytuł dokumentu
+
+## Główna sekcja
+
+### Podsekcja
+\end{verbatim}
+
+Efekt:
+
+\begin{quote}
+{\LARGE \textbf{Tytuł dokumentu}}\par\medskip
+{\Large \textbf{Główna sekcja}}\par\medskip
+{\large \textbf{Podsekcja}}
+\end{quote}
+
+W praktyce jeden dokument powinien mieć jeden główny nagłówek \texttt{\#}.
+
+Dalsze części dokumentu organizujemy za pomocą \texttt{\#\#}, \texttt{\#\#\#} itd.
+
+\medskip\hrule\medskip
+
+\subsection{Pogrubienie, kursywa i przekreślenie}
+
+Źródło:
+
+\begin{verbatim}
+**tekst pogrubiony**
+
+*tekst pochylony*
+
+~~tekst przekreślony~~
+
+***tekst pogrubiony i pochylony***
+\end{verbatim}
+
+Efekt:
+
+\textbf{tekst pogrubiony}
+
+\textit{tekst pochylony}
+
+\sout{tekst przekreślony}
+
+\textbf{\textit{tekst pogrubiony i pochylony}}
+
+Wyróżnień warto używać oszczędnie. Jeśli wszystko jest pogrubione, nic nie jest naprawdę wyróżnione.
+\medskip\hrule\medskip
+
+\subsection{Akapit i nowa linia}
+
+Nowy akapit tworzymy przez pozostawienie pustej linii.
+
+Źródło:
+
+\begin{verbatim}
+To jest pierwszy akapit.
+
+To jest drugi akapit.
+\end{verbatim}
+
+Efekt:
+
+To jest pierwszy akapit.
+
+To jest drugi akapit.
+
+To ważna zasada: w Markdown pojedyncze naciśnięcie Enter nie zawsze oznacza nowy akapit.
+
+\medskip\hrule\medskip
+
+\subsection{Listy punktowane}
+
+Źródło:
+
+\begin{verbatim}
+- Markdown
+- Colab
+- GitHub
+\end{verbatim}
+
+Efekt:
+
+\begin{itemize}
+    \item Markdown
+    \item Colab
+    \item GitHub
+\end{itemize}
+
+Listy można zagnieżdżać:
+
+\begin{verbatim}
+- GitHub
+  - repozytorium
+  - Issues
+  - historia zmian
+- Colab
+  - tekst
+  - kod
+  - wyniki
+\end{verbatim}
+
+Efekt:
+
+\begin{itemize}
+    \item GitHub
+    \begin{itemize}
+        \item repozytorium
+        \item Issues
+        \item historia zmian
+    \end{itemize}
+    \item Colab
+    \begin{itemize}
+        \item tekst
+        \item kod
+        \item wyniki
+    \end{itemize}
+\end{itemize}
+
+\medskip\hrule\medskip
+
+\subsection{Listy numerowane}
+
+Źródło:
+
+\begin{verbatim}
+1. przygotuj dane,
+2. wykonaj obliczenia,
+3. zapisz wynik,
+4. opisz wynik.
+\end{verbatim}
+
+Efekt:
+
+\begin{enumerate}
+    \item przygotuj dane,
+    \item wykonaj obliczenia,
+    \item zapisz wynik,
+    \item opisz wynik.
+\end{enumerate}
+
+Listy numerowane są szczególnie przydatne przy opisie procedury lub instrukcji.
+
+\medskip\hrule\medskip
+
+\subsection{Checklisty}
+
+GitHub obsługuje listy zadań.
+
+Źródło:
+
+\begin{verbatim}
+- [x] utworzono notebook
+- [x] wykonano obliczenia
+- [ ] sprawdzono wynik
+\end{verbatim}
+
+Efekt:
+
+\begin{itemize}
+    \item[$\boxtimes$] utworzono notebook
+    \item[$\boxtimes$] wykonano obliczenia
+    \item[$\square$] sprawdzono wynik
+\end{itemize}
+
+Checklisty bardzo dobrze nadają się do krótkich list kontrolnych w dokumentacji i GitHub Issues.
+
+\medskip\hrule\medskip
+
+\subsection{Linki}
+
+Źródło:
+
+\begin{verbatim}
+[GitHub](https://github.com/)
+\end{verbatim}
+
+Efekt:
+
+\href{https://github.com/}{GitHub}
+
+Zamiast wklejać długi adres do strony, warto umieścić go pod czytelną nazwą.
+
+\medskip\hrule\medskip
+
+\subsection{Obrazy}
+
+Obraz osadzamy podobnie jak link, ale na początku dodajemy znak \texttt{!}.
+
+Źródło:
+
+\begin{verbatim}
+![Wykres zależności y od x](wykres.png)
+\end{verbatim}
+
+Jeżeli plik \texttt{wykres.png} znajduje się w tym samym folderze co dokument Markdown, GitHub wyświetli obraz w miejscu tej instrukcji.
+
+Jeżeli plik znajduje się w podfolderze \texttt{files}, używamy ścieżki:
+
+\begin{verbatim}
+![Wykres zależności y od x](files/wykres.png)
+\end{verbatim}
+
+Efekt:
+
+\framebox{\parbox{0.8\textwidth}{\centering Wykres zależności y od x (\texttt{files/wykres.png})}}
+
+Tekst w nawiasach kwadratowych jest opisem obrazu. Warto go uzupełniać --- pomaga zrozumieć zawartość także wtedy, gdy obraz nie może zostać wyświetlony.
+
+W projektach przechowywanych w repozytorium zwykle wygodniej używać \textbf{ścieżek względnych} niż pełnych adresów internetowych.
+
+\medskip\hrule\medskip
+
+\subsection{Tabele}
+
+Źródło:
+
+\begin{verbatim}
+| Narzędzie | Typ pliku | Zastosowanie |
+| --- | --- | --- |
+| Markdown | .md | dokumentacja |
+| Colab | .ipynb | obliczenia |
+| GitHub | repozytorium | historia projektu |
+\end{verbatim}
+
+Efekt:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Narzędzie} & \textbf{Typ pliku} & \textbf{Zastosowanie} \\
+\midrule
+Markdown & \texttt{.md} & dokumentacja \\
+Colab & \texttt{.ipynb} & obliczenia \\
+GitHub & repozytorium & historia projektu \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tabele są dobre do krótkich zestawień. Jeśli w komórkach pojawiają się długie akapity tekstu, zwykle lepiej wrócić do zwykłych sekcji i list.
+
+\medskip\hrule\medskip
+
+\subsection{Kod w tekście}
+
+Nazwy plików, komendy i bardzo krótkie fragmenty kodu warto oznaczać pojedynczym backtickiem.
+
+Źródło:
+
+\begin{verbatim}
+Uruchom plik `analiza.py` i sprawdź wartość zmiennej `wynik`.
+\end{verbatim}
+
+Efekt:
+
+Uruchom plik \texttt{analiza.py} i sprawdź wartość zmiennej \texttt{wynik}.
+
+\medskip\hrule\medskip
+
+\subsection{Bloki kodu}
+
+Większy fragment kodu umieszczamy w osobnym bloku.
+
+Źródło:
+
+\begin{verbatim}
+```python
+x = 5
+y = x**2
+print(y)
+\end{verbatim}
+
+Podanie nazwy języka, np. \texttt{python}, \texttt{bash}, \texttt{html} czy \texttt{json}, pozwala GitHubowi kolorować składnię.
+
+W raporcie technicznym dobrze jest pokazać krótki fragment kodu, który jest istotny dla opisywanego wyniku. Nie trzeba kopiować do raportu całego programu.
+```latex
+\medskip\hrule\medskip
+
+\subsection{Cytaty}
+
+Źródło:
+
+\begin{verbatim}
+> Wynik należy zawsze sprawdzić przed jego wykorzystaniem.
+\end{verbatim}
+
+Efekt:
+
+\begin{quote}
+Wynik należy zawsze sprawdzić przed jego wykorzystaniem.
+\end{quote}
+
+Cytaty można wykorzystać także do krótkiego wyróżnienia komentarza lub uwagi.
+
+\medskip\hrule\medskip
+
+\subsection{Matematyka}
+
+GitHub potrafi renderować wzory matematyczne.
+
+Krótki wzór umieszczamy wewnątrz pojedynczych znaków dolara.
+
+Źródło:
+
+\begin{verbatim}
+Energia spoczynkowa dana jest wzorem $E=mc^2$.
+\end{verbatim}
+
+Efekt:
+
+Energia spoczynkowa dana jest wzorem $E=mc^2$.
+
+Dłuższy wzór umieszczamy w osobnym bloku.
+
+Źródło:
+
+\begin{verbatim}
+$$
+\sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}
+$$
+\end{verbatim}
+
+Efekt:
+
+\[
+\sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}
+\]
+
+Macierze zapisujemy wielowierszowo:
+
+\begin{verbatim}
+$$
+A=
+\begin{pmatrix}
+1 & 2 \\
+3 & 4 \\
+\end{pmatrix}
+$$
+\end{verbatim}
+
+Efekt:
+
+\[
+A=
+\begin{pmatrix}
+1 & 2 \\
+3 & 4 \\
+\end{pmatrix}
+\]
+
+\medskip\hrule\medskip
+
+\subsection{Zrzut ekranu i transkrypcja do Markdown}
+
+Czasem informacja istnieje tylko jako obraz: zrzut ekranu programu, zdjęcie tabeli, komunikat błędu albo fragment zeskanowanego dokumentu. AI może pomóc przepisać zawartość obrazu do tekstu. Taki proces nazywamy tutaj \textbf{transkrypcją}.
+
+Przykładowy workflow:
+
+\begin{enumerate}
+    \item zachowujemy oryginalny obraz,
+    \item prosimy AI o \textbf{przepisanie jego zawartości do kodu markdown},
+    \item zapisujemy wynik w pliku tekstowym lub Markdown,
+    \item porównujemy transkrypcję z obrazem,
+    \item poprawiamy ewentualne błędy.
+\end{enumerate}
+
+Największej ostrożności wymagają:
+
+\begin{itemize}
+    \item liczby,
+    \item wzory,
+    \item nazwy plików,
+    \item adresy,
+    \item fragmenty kodu,
+    \item komunikaty błędów.
+\end{itemize}
+
+Transkrypcja wygenerowana przez AI jest \textbf{wersją roboczą}, dopóki człowiek jej nie sprawdzi.
+
+\medskip\hrule\medskip
+
+\subsection{Poprawne formatowanie matematyki w Markdown}
+
+W materiałach tego kursu polecamy stosowanie prostego zestawu reguł formatowania matematyki przygotowanego specjalnie tak, aby pliki dobrze renderowały się na GitHubie:
+
+\begin{itemize}
+    \item \href{hints.md}{hints.md}
+\end{itemize}
+
+Pracując z chatem AI i domagając się kodu markdowna, warto załączać ten plik jako kontekst, aby AI od razu generowało poprawny kod w Markdown.
+
+Różne systemy: przeglądarkowe chaty AI, Edytor Visual Studio, Colab i GitHub, mogą różnie renderować wzory matematyczne!
+
+Częstym błędem jest używanie w kodzie Markdown znaków \texttt{\textbackslash[]} i \texttt{\textbackslash]} zamiast \texttt{\$ \$} do oznaczania wzorów matematycznych. Wtedy GitHub nie renderuje wzoru, a Colab renderuje go poprawnie.
+
+\medskip\hrule\medskip
+
+\subsection{Dobre materiały o Markdown}
+
+\begin{itemize}
+    \item \href{https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax}{GitHub Docs --- Basic writing and formatting syntax}
+    \item \href{https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions}{GitHub Docs --- Writing mathematical expressions}
+    \item \href{https://www.markdownguide.org/basic-syntax/}{Markdown Guide --- Basic Syntax}
+    \item \href{https://www.markdownguide.org/cheat-sheet/}{Markdown Guide --- Cheat Sheet}
+\end{itemize}
+
+\end{document}
