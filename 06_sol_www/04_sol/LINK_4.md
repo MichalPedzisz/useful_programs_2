@@ -5,5 +5,4 @@
 https://NAZWA-UZYTKOWNIKA.github.io/rzut/
 
 ## Repozytorium
-
-https://github.com/NAZWA-UZYTKOWNIKA/rzut
+https://github.com/MichalPedzisz/rzut
