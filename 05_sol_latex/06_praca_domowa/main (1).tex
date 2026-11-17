@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{lemma}{Lemat}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicja}
+
+\title{AM I Rok Fizyki i Astronomii -- Lista 1 (Rozwiązania)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Zadanie 1}
+\noindent\textbf{Treść:} Niech $n \in \mathbb{N}$ i $m \in \mathbb{Z}$. Symbol $n|m$ oznacza, że liczba $n$ jest dzielnikiem liczby $m$. Wykaż, że $2|(n^2 - n)$ i $3|(n^3 - n)$ dla dowolnej liczby naturalnej $n$. Czy prawdziwe jest stwierdzenie, że dla dowolnych liczb naturalnych $k$ i $n$ zachodzi $k|(n^k - n)$?
+
+\subsection*{Rozwiązanie:}
+\begin{enumerate}
+    \item \textbf{Dla $2|(n^2 - n)$:}
+    Zauważmy, że $n^2 - n = n(n - 1)$. Liczby $n$ oraz $n-1$ to dwie kolejne liczby całkowite. Zawsze jedna z nich jest parzysta, co oznacza, że ich ilocznk jest podzielny przez $2$. Zatem $2|(n^2 - n)$.
+    
+    \item \textbf{Dla $3|(n^3 - n)$:}
+    Przekształcamy wyrażenie: $n^3 - n = n(n^2 - 1) = (n-1)n(n+1)$. Jest to ilocznk trzech kolejnych liczb całkowityх. Wśród trzech kolejnych liczb całkowitych dokładnie jedna jest podzielna przez $3$, więc ich iloczyn musi być podzielny przez $3$. Zatem $3|(n^3 - n)$.
+    
+    \item \textbf{Czy dla dowolnych $k, n$ zachodzi $k|(n^k - n)$?}
+    Stwierdzenie to jest prawdziwe na mocy \textbf{Małego Twierdzenia Fermata}, które mówi, że jeśli $p$ jest liczbą pierwszą, to dla każdej liczby całkowitej $n$ zachodzi $p|(n^p - n)$. Jednakże, jeśli $k$ nie jest liczbą pierwszą (np. $k = 4$, $n = 2$), to $4 | (2^4 - 2) = 4 | 14$, co jest fałszem ($14$ nie dzieli się przez $4$). Zatem stwierdzenie nie jest prawdziwe dla dowolnych złożonych liczb $k$.
+\end{enumerate}
+
+\section*{Zadanie 3}
+\noindent\textbf{Treść:} Metodą indukcji wykaż, że $\forall n \in \mathbb{N}$:
+\[ a) \quad 1^2 + 2^2 + \ldots + n^2 = \frac{n(n+1)(2n+1)}{6} \]
+\[ b) \quad 1^3 + 2^3 + \ldots + n^3 = \frac{n^2(n+1)^2}{4} \]
+
+\subsection*{Rozwiązanie (punkt a):}
+\begin{proof}[Dowód indukcyjny]
+1. \textbf{Baza indukcji ($n = 1$):}
+Lewa strona: $1^2 = 1$.
+Prawa strona: $\frac{1(1+1)(2\cdot 1+1)}{6} \frac{1 \cdot 2 \cdot 3}{6} = 1$.
+Strony są równe, więc baza indukcji jest spełniona.
+
+2. \textbf{Krok indukcyjny:}
+Zakładamy, że wzór jest prawdziwy dla pewnego $n = k$ (założenie indukcyjne):
+\[ 1^2 + 2^2 + \ldots + k^2 = \frac{k(k+1)(2k+1)}{6} \]
+Chcemy pokazać, że zachodzi dla $n = k+1$:
+\[ 1^2 + 2^2 + \ldots + k^2 + (k+1)^2 = \frac{(k+1)(k+2)(2k+3)}{6} \]
+Korzystając z założenia indukcyjnego, dodajemy $(k+1)^2$ do obu stron:
+\[ \frac{k(k+1)(2k+1)}{6} + (k+1)^2 = (k+1) \left[ \frac{k(2k+1)}{6} + k + 1 \right] \]
+\[ = (k+1) \frac{2k^2 + k + 6k + 6}{6} = (k+1) \frac{2k^2 + 7k + 6}{6} \]
+Zauważmy, że wielomian $2k^2 + 7k + 6$ można rozłożyć na czynniki: $(k+2)(2k+3)$. Ostatecznie dostajemy:
+\[ \frac{(k+1)(k+2)(2k+3)}{6} \]
+Co dowodzi prawdziwości kroku indukcyjnego.
+\end{proof}
+
+\end{document}
