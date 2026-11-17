@@ -2,7 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/rzut/
+https://michalpedzisz.github.io/rzut/
 
 ## Repozytorium
+
 https://github.com/MichalPedzisz/rzut
